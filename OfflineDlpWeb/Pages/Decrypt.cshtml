@@ -1,0 +1,32 @@
+@page
+@model OfflineDlpWeb.Pages.DecryptModel
+@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+
+<h2>Décrypter un fichier</h2>
+<p class="card-subtitle">
+    Sélectionnez un fichier <code>.enc</code> généré par l'agent Offline DLP pour obtenir la version en clair.
+</p>
+
+<div class="card">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Fichier chiffré (.enc)</label><br />
+            <input type="file" name="EncFile" accept=".enc" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Lancer le déchiffrement</button>
+    </form>
+
+    @if (Model.DecryptedFileName != null)
+    {
+        <p class="message-success">
+            ✔ Fichier déchiffré avec succès !
+            <br />
+            <a href="/downloads/@Model.DecryptedFileName">Télécharger le fichier déchiffré</a>
+        </p>
+    }
+
+    @if (Model.ErrorMessage != null)
+    {
+        <p class="message-error">@Model.ErrorMessage</p>
+    }
+</div>

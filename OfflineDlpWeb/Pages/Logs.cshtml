@@ -1,0 +1,24 @@
+@page
+@model OfflineDlpWeb.Pages.LogsModel
+@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+
+<h2>Journal des événements</h2>
+<p class="card-subtitle">
+    Dernières entrées du fichier <code>logs.txt</code> généré par l'agent Offline DLP.
+</p>
+
+<div class="card">
+    @if (Model.Lines == null || !Model.Lines.Any())
+    {
+        <p>Aucune entrée de log trouvée.</p>
+    }
+    else
+    {
+        <pre class="log-box">
+@foreach (var line in Model.Lines)
+{
+@line
+}
+        </pre>
+    }
+</div>

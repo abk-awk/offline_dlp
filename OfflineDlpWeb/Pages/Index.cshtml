@@ -1,0 +1,34 @@
+﻿@page
+@model OfflineDlpWeb.Pages.IndexModel
+@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+
+<h2>Offline DLP - Tableau de bord</h2>
+
+<p>Utilisateur connecté : @User.Identity?.Name</p>
+
+<h3>État de l'agent UsbCryptoAgent</h3>
+
+<p>
+    État actuel :
+    @if (Model.AgentRunning)
+    {
+        <strong style="color:green">Actif</strong>
+    }
+    else
+    {
+        <strong style="color:red">Inactif</strong>
+    }
+</p>
+
+<form method="post" asp-page-handler="StartAgent">
+    <button type="submit">Activer la protection USB</button>
+</form>
+
+<form method="post" asp-page-handler="StopAgent" style="margin-top:10px;">
+    <button type="submit">Désactiver la protection USB</button>
+</form>
+
+<hr />
+
+<h3>Module de déchiffrement (via interface)</h3>
+<p>Accédez à l’outil de décryptage depuis le menu ci-dessus.</p>

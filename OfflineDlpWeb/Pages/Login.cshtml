@@ -1,0 +1,27 @@
+@page
+@model OfflineDlpWeb.Pages.LoginModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Connexion";
+}
+
+<h2>Connexion</h2>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div style="color:red">@Model.ErrorMessage</div>
+}
+
+<form method="post">
+    <div>
+        <label>Nom d'utilisateur</label><br />
+        <input type="text" name="Username" />
+    </div>
+    <div style="margin-top:8px;">
+        <label>Mot de passe</label><br />
+        <input type="password" name="Password" />
+    </div>
+    <div style="margin-top:12px;">
+        <button type="submit">Se connecter</button>
+    </div>
+</form>

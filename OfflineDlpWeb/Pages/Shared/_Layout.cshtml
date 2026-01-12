@@ -1,0 +1,38 @@
+﻿@*
+    Layout général pour OfflineDlpWeb
+*@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OfflineDlpWeb</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-brand">
+                Offline DLP
+            </div>
+            <ul class="nav-links">
+                <li><a asp-page="/Index">Tableau de bord</a></li>
+                <li><a asp-page="/Decrypt">Déchiffrer un fichier</a></li>
+                <li><a asp-page="/Logs">Logs</a></li>
+                <li><a asp-page="/Logout" class="nav-logout">Déconnexion</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+        <footer>
+            Offline DLP – Projet de sécurité_ efrei-Paris &nbsp;|&nbsp; © @DateTime.Now.Year
+        </footer>
+    </div>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
