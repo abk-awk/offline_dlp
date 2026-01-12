@@ -1,0 +1,26 @@
+# Build results
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log
+logs.txt
+
+# Executables
+*.exe
+*.pdb
+
+# Publish
+publish/
+
+# App settings local
+appsettings.Development.json
+
+# OS
+.DS_Store
+Thumbs.db
