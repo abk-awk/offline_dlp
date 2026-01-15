@@ -21,6 +21,6 @@ Le projet est composé de **2 parties principales** :
 - Application console .NET
 - Surveille les clés USB
 - Chiffre automatiquement les fichiers détectés
-- Génère des logs locaux
+- Génère des logs locaux et les exportter
 
 📂 Dossier :
